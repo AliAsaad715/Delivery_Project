@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\UserController;
@@ -29,11 +30,15 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/logout', [AuthController::class, 'logout']);
     Route::post('/personal_info', [UserController::class, 'store']);
-
-
+    Route::get('/orders', [OrderController::class, 'index']);
+    Route::post('/order', [OrderController::class, 'store']);
+    Route::put('/orders/{id}', [OrderController::class, 'update']);
+    Route::delete('/orders/{id}', [OrderController::class, 'destroy']);
 });
 
 Route::get('/stores', [StoreController::class, 'index']);
+Route::get('/stores/{name}', [StoreController::class, 'search']);
+
 Route::get('/products/{id}', [ProductController::class, 'index']);
 Route::get('/products/{id}/{name}', [ProductController::class, 'search']);
-Route::get('/stores/search/{name}', [StoreController::class, 'search']);
+Route::get('/product/{idS}/{idP}', [ProductController::class, 'show']);

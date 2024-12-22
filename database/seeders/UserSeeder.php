@@ -18,7 +18,7 @@ class UserSeeder extends Seeder
             'last_name' => 'Asaad',
             'phone_number' => '0930032612',
             'password' => bcrypt('12345678'),
-            'image' => 'c:\Users\EVO.store\Pictures\1671735108939.jpg',
+            'image' => 'public/uploads/profile.jpg',
             'position' => 'Damascus/Saqba',
         ]);
     }

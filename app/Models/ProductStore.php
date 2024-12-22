@@ -20,4 +20,9 @@ class ProductStore extends Model
     {
         return $this->belongsTo(Store::class);
     }
+
+    public function order_product_stores()
+    {
+        return $this->hasMany(OrderProductStore::class);
+    }
 }

@@ -2,47 +2,69 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProductDetailsResource;
 use App\Http\Resources\ProductResource;
-use App\Models\Product;
 use App\Models\ProductStore;
 use App\Models\Store;
 use Illuminate\Http\Request;
+use App\Http\Resources\ProductStoreResource;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
     use ApiResponseTrait;
     public function index($id)
     {
-        if($id <= 0 || $id > Store::get()->count())
-            return $this->apiResponse(null, 'Invalid id', 404);
 
-        $product_stores = ProductStore::where('store_id', $id)->get();
+        $products = Product::whereHas('product_stores', function ($query) use ($id) {
+            $query->where('store_id', $id);
+        })->get();
         $i = 0;
-        $response = [];
-        foreach ($product_stores as $product) {
+        $response = null;
+        foreach ($products as $product) {
             $response[$i] = new ProductResource($product);
             $i++;
         }
         return $this->apiResponse($response, 'Success', 200);
-   }
+    }
 
-   public function search($id, $name)
+    public function search($id, $name)
     {
-        if($id <= 0 || $id > Store::get()->count())
-            return $this->apiResponse(null, 'Invalid id', 404);
-        $products_store = ProductStore::where('store_id', $id)->get();
-        $products = [];
-        if(!$name) {
-            $i = 0;
-        foreach ($products_store as $product) {
-            $products[$i] = new ProductResource($product);
+
+        $products = Product::where('name', 'like', '%' . $name . '%')
+            ->whereHas('product_stores', function ($query) use ($id) {
+                $query->where('store_id', $id);
+            })->get();
+
+        $i = 0;
+        $response = null;
+        foreach ($products as $product) {
+            $response[$i] = new ProductResource($product);
             $i++;
         }
-        }
-        else {
-        foreach($products_store as $product_store)
-            $products = $product_store->product->where('name', 'like', '%'.$name.'%')->get();
-        }
-        return  $this->apiResponse($products, 'Success', 200);
+
+        return $this->apiResponse($response, 'Success', 200);
+    }
+
+    public function show($idS, $idP)
+    {
+
+        $product = ProductStore::where('store_id', $idS)->where('product_id', $idP)->get()->first();
+        $response = null;
+        if ($product)
+            $response = new ProductDetailsResource($product);
+
+        return $this->apiResponse($response, 'Success', 200);
+    }
+
+    public function add($idS, $idP)
+    {
+
+        $product = ProductStore::where('store_id', $idS)->where('product_id', $idP)->get()->first();
+        $response = null;
+        if ($product)
+            $response = new ProductDetailsResource($product);
+
+        return $this->apiResponse($response, 'Success', 200);
     }
 }

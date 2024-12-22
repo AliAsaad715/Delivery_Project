@@ -25,8 +25,6 @@ class StoreController extends Controller
 
     public function search($name)
     {
-        if(!$name)
-            return $this->apiResponse(null, 'Empty search!', 404);
         $stores = Store::where('name', 'like', '%' . $name . '%')->get();
         return  $this->apiResponse($stores, 'Success', 200);
     }
