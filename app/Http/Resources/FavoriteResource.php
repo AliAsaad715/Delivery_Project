@@ -4,9 +4,8 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-use Stichoza\GoogleTranslate\GoogleTranslate;
 
-class StoreResource extends JsonResource
+class FavoriteResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,11 +14,11 @@ class StoreResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $translator = new GoogleTranslate(app()->getLocale());
         return [
             'id' => $this->id,
-            'name' => $translator->translate($this->name),
-            'image' => $this->image
+            'user_id' => $this->user_id,
+            'product_store_id' => $this->product_store_id,
+            'quantity' => $this->product_store->quantity
         ];
     }
 }

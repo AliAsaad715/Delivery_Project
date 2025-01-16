@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\FavoriteResource;
 use App\Http\Resources\UserResource;
+use App\Models\Favorite;
+use App\Models\ProductStore;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -54,4 +57,40 @@ class UserController extends Controller
         return $this->apiResponse($response, 'Success', 200);
     }
 
+    public function addToFavorites($idS, $idP)
+    {
+        $product = ProductStore::where('store_id', $idS)->where('product_id', $idP)->first();
+        if (Favorite::where('product_store_id', $product->id)->where('user_id', Auth::user()->id)->first())
+            return $this->apiResponse(null, 'The product is already added to favorites!', 200);
+        Favorite::create([
+            'user_id' => Auth::user()->id,
+            'product_store_id' => $product->id,
+        ]);
+
+        //$response = new FavoriteResource($favorite);
+        return $this->apiResponse(null, 'Success', 201);
+    }
+
+    public function getFavorites()
+    {
+        $favorite = Favorite::where('user_id', Auth::user()->id)->get();
+
+        $response = null;
+        foreach ($favorite as $product)
+            $response[] = new FavoriteResource($product);
+        return $this->apiResponse($response, 'Success', 200);
+    }
+
+    public function saveToken(Request $request)
+    {
+        $request->validate([
+            'fcm_token' => 'required|string',
+        ]);
+
+        $user = auth()->user();
+        $user->fcm_token = $request->fcm_token;
+        $user->save();
+
+        return $this->apiResponse(null, 'FCM token saved successfully', 200);
+    }
 }

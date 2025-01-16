@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
-
+use Stichoza\GoogleTranslate\GoogleTranslate;
 class UserResource extends JsonResource
 {
     /**
@@ -14,13 +14,14 @@ class UserResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+        $translator = new GoogleTranslate(app()->getLocale());
         return [
-            'first_name' => $this->first_name,
-            'last_name' => $this->last_name,
+            'first_name' => $translator->translate($this->first_name),
+            'last_name' => $translator->translate($this->last_name),
             'phone_number' => $this->phone_number,
             'password' => $this->password,
             'image' => $this->image,
-            'position' => $this->position
+            'position' => $translator->translate($this->position)
         ];
     }
 }

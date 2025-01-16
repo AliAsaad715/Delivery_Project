@@ -9,14 +9,17 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Password;
+use Stichoza\GoogleTranslate\GoogleTranslate;
 
 class AuthController extends Controller
 {
     use ApiResponseTrait;
+
     public function register(Request $request)
     {
+        $translator = new GoogleTranslate(app()->getLocale());
         $validator = Validator::make($request->all(), [
-            'phone_number' => ['required', 'numeric', 'digits:10', 'unique:users'],
+            'phone_number' => ['required', 'numeric', 'digits:10', 'unique:users', 'phone:SY'],
             'password' => ['required', Password::min(8), 'confirmed']
         ]);
 
@@ -68,4 +71,20 @@ class AuthController extends Controller
         Auth::user()->currentAccessToken()->delete();
         return $this->apiResponse(null, 'Logged out', 200);
     }
+
+    public function verification(Request $request)
+    {
+        // $validator = Validator::make($request->all(), [
+        //     'v_code' => ['required', 'numeric', 'digits:4']
+        // ]);
+
+        // if ($validator->fails()) {
+        //     return $this->apiResponse(null, $validator->errors()->toJson(), 400);
+        // }
+        if ($request['v_code'] == 1234)
+            return $this->apiResponse(null, 'Verified successfully', 200);
+
+        return $this->apiResponse(null, 'The code is wrong.', 404);
+    }
+
 }

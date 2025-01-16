@@ -5,9 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Resources\ProductDetailsResource;
 use App\Http\Resources\ProductResource;
 use App\Models\ProductStore;
-use App\Models\Store;
-use Illuminate\Http\Request;
-use App\Http\Resources\ProductStoreResource;
 use App\Models\Product;
 
 class ProductController extends Controller
@@ -19,6 +16,7 @@ class ProductController extends Controller
         $products = Product::whereHas('product_stores', function ($query) use ($id) {
             $query->where('store_id', $id);
         })->get();
+        // $products = ProductStore::where('store_id', $id)->get();
         $i = 0;
         $response = null;
         foreach ($products as $product) {
@@ -54,16 +52,6 @@ class ProductController extends Controller
         if ($product)
             $response = new ProductDetailsResource($product);
 
-        return $this->apiResponse($response, 'Success', 200);
-    }
-
-    public function add($idS, $idP)
-    {
-
-        $product = ProductStore::where('store_id', $idS)->where('product_id', $idP)->get()->first();
-        $response = null;
-        if ($product)
-            $response = new ProductDetailsResource($product);
 
         return $this->apiResponse($response, 'Success', 200);
     }

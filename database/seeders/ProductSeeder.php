@@ -233,5 +233,256 @@ class ProductSeeder extends Seeder
             "image" => "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
             "brand" => "Adidas"
         ]);
+
+        
+        Product::create([
+            "name" => "HP Victus 15 Gaming Laptop",
+            "price" => 869.23,
+            "description" => "HP Victus 15 Gaming Laptop, 15.6 FHD 144Hz Display, AMD Ryzen 5 7535HS, 64GB DDR5 RAM, 2TB PCIe M.2 SSD, NVIDIA GeForce RTX",
+
+            "image" => "https://m.media-amazon.com/images/I/71juF7A+MsL._AC_UY327_FMwebp_QL65_.jpg",
+            "brand" => "HP"
+        ]);
+        Product::create([
+            "name" => "MSI Thin GF63 Gaming Laptop",
+            "price" => 753.12,
+            "description" => "MSI Thin GF63 15.6 144Hz Gaming Laptop: 12th Gen Intel Core i7, NVIDIA GeForce RTX 4050, 16GB DDR4, 512GB NVMe SSD",
+
+            "image" => "https://m.media-amazon.com/images/I/71JqyTBiXrL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+            "brand" => "MSI"
+        ]);
+        Product::create([
+            "name" => "ASUS TUF Gaming F15 (2023) Gaming Laptop",
+            "price" => 812.39,
+            "description" => "ASUS TUF Gaming F15 (2023) Gaming Laptop, 15.6” FHD 144Hz, 100% sRGB Display, GeForce RTX 4050, Intel Core i5-13500H, 16GB DDR4.",
+
+            "image" => "https://m.media-amazon.com/images/I/71v0BQo8T8L._AC_UY327_FMwebp_QL65_.jpg",
+            "brand" => "ASUS"
+        ]);
+        Product::create([
+            "name" => "ASUS ROG Strix G16 Gaming Laptop",
+            "price" => 1212.39,
+            "description" => "ASUS ROG Strix G16 Gaming Laptop, 15.6” FHD 144Hz, 100% sRGB Display, GeForce RTX 4050, Intel Core i5-13500H, 16GB DDR4.",
+
+            "image" => "https://m.media-amazon.com/images/I/71v0BQo8T8L._AC_SX679_.jpg",
+            "brand" => "ASUS"
+        ]);
+        Product::create([
+            "name" => "ASUS TUF Gaming F15 (2023) Gaming Laptop",
+            "price" => 1252.00,
+            "description" => "ASUS TUF Gaming F15 (2023) Gaming Laptop, 15.6” FHD 144Hz, 100% sRGB Display, GeForce RTX 4050, Intel Core i5-13500H, 16GB DDR4.",
+
+            "image" => "https://m.media-amazon.com/images/I/81gK08T6tYL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+            "brand" => "ASUS"
+        ]);
+        Product::create([
+            "name" => "ASUS TUF Gaming F15 (2023) Gaming Laptop",
+            "price" => 1162.13,
+            "description" => "ASUS TUF Gaming F15 (2023) Gaming Laptop, 15.6” FHD 144Hz, 100% sRGB Display, GeForce RTX 4050, Intel Core i5-13500H, 16GB DDR4.",
+
+            "image" => "https://m.media-amazon.com/images/I/71YHDlUYklL._AC_UY327_FMwebp_QL65_.jpg",
+            "brand" => "ASUS"
+        ]);
+        Product::create([
+            "name" => "ASUS TUF Gaming F15 (2023) Gaming Laptop",
+            "price" => 1012.2,
+            "description" => "ASUS TUF Gaming F15 (2023) Gaming Laptop, 15.6” FHD 144Hz, 100% sRGB Display, GeForce RTX 4050, Intel Core i5-13500H, 16GB DDR4.",
+
+            "image" => "https://m.media-amazon.com/images/I/71tIK0NBkKL._AC_UY327_FMwebp_QL65_.jpg",
+            "brand" => "ASUS"
+        ]);
+        Product::create([
+            "name" => "HP Victus Gaming Laptop",
+            "price" => 1123.77,
+            "description" => "HP Victus Gaming Laptop, 16.1 FHD 144Hz Display, AMD Ryzen 7-8845HS(8 cores), NVIDIA GeForce RTX 4070, 32GB DDR5 RAM, 2TB SSD",
+
+            "image" => "https://m.media-amazon.com/images/I/71sVGxgx89L._AC_SX679_.jpg",
+            "brand" => "HP"
+        ]);
+        Product::create([
+            "name" => "Dell 2023 Inspiron Laptop",
+            "price" => 930.27,
+            "description" => "Dell 2023 Inspiron Laptop, 16.1 FHD 144Hz Display, AMD Ryzen 7-8845HS(8 cores), NVIDIA GeForce RTX 4070, 32GB DDR5 RAM, 2TB SSD",
+
+            "image" => "https://m.media-amazon.com/images/I/61KPrzQ14GL._AC_SX679_.jpg",
+            "brand" => "DELL"
+        ]);
+        Product::create([
+            "name" => "Dell 2022 Inspiron 35111 Laptop",
+            "price" => 312.8,
+            "description" => "Dell 2022 Inspiron 3511 Laptopp, 16.1 FHD 144Hz Display, AMD Ryzen 7-8845HS(8 cores), NVIDIA GeForce RTX 4070, 32GB DDR5 RAM, 2TB SSD",
+
+            "image" => "https://m.media-amazon.com/images/I/71I8QUVcEpL._AC_UY327_FMwebp_QL65_.jpg",
+            "brand" => "DELL"
+        ]);
+
+
+
+        Product::create([
+            "name" => "Armitron Sport Women's Digital Watch",
+            "price" => 3.55,
+            "description" => "Armitron Sport Women's Digital Chronograph Resin Strap Watch, 45/7012",
+
+            "image" => "https://m.media-amazon.com/images/I/71j0nFQ4NqL._AC_SY879_.jpg",
+            "brand" => "Armitron"
+        ]);
+        Product::create([
+            "name" => "Timex Men's Easy Reader Watch",
+            "price" => 7.8,
+            "description" => "Digital Watch",
+
+            "image" => "https://m.media-amazon.com/images/I/710yuVTQdKL._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "Armitron"
+        ]);
+        Product::create([
+            "name" => "Casio DW9052 Series Men’s Digital Watch",
+            "price" => 7.8,
+            "description" => "Digital Watch",
+
+            "image" => "https://m.media-amazon.com/images/I/71KhpkIzGmL._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "Armitron"
+        ]);
+        Product::create([
+            "name" => "Casio G-Shock GWM5610-1 Men's Watch",
+            "price" => 7.8,
+            "description" => "Digital Watch",
+
+            "image" => "https://m.media-amazon.com/images/I/81dvG+N1teL._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "Armitron"
+        ]);
+        Product::create([
+            "name" => "Invicta Men's Pro Diver Collection Watch",
+            "price" => 7.8,
+            "description" => "Digital Watch",
+
+            "image" => "https://m.media-amazon.com/images/I/61+M-3bg4pL._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "Armitron"
+        ]);
+        Product::create([
+            "name" => "Fossil Nate Men's Watch",
+            "price" => 7.8,
+            "description" => "Digital Watch",
+
+            "image" => "https://m.media-amazon.com/images/I/91wuW8pX5fL._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "Armitron"
+        ]);
+        Product::create([
+            "name" => "Fossil Nate Men's Watch",
+            "price" => 7.8,
+            "description" => "Digital Watch",
+
+            "image" => "https://m.media-amazon.com/images/I/91JK8xNmoCL._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "Armitron"
+        ]);
+        Product::create([
+            "name" => "Fossil Nate Men's Watch",
+            "price" => 7.8,
+            "description" => "Digital Watch",
+
+            "image" => "https://m.media-amazon.com/images/I/71jDbYB7y8L._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "Armitron"
+        ]);
+        Product::create([
+            "name" => "Fossil Nate Men's Watch",
+            "price" => 7.8,
+            "description" => "Digital Watch",
+
+            "image" => "https://m.media-amazon.com/images/I/613kS8sIRcL._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "Armitron"
+        ]);
+        Product::create([
+            "name" => "Fossil Nate Men's Watch",
+            "price" => 7.8,
+            "description" => "Digital Watch",
+
+            "image" => "https://m.media-amazon.com/images/I/91KRgOuTFDL._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "Armitron"
+        ]);
+
+
+
+        Product::create([
+            "name" => "Nerlion Messenger Bag for Men",
+            "price" => 3.55,
+            "description" => "Bag",
+
+            "image" => "https://m.media-amazon.com/images/I/71RH6m58MDL._AC_SY695_.jpg",
+            "brand" => "ESTARER"
+        ]);
+        Product::create([
+            "name" => "MATEIN Business Laptop Backpack",
+            "price" => 7.8,
+            "description" => "Bag",
+
+            "image" => "https://m.media-amazon.com/images/I/71iS+mJSbGL._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "ESTARER"
+        ]);
+        Product::create([
+            "name" => "Pendleton Men's Crossbody",
+            "price" => 7.8,
+            "description" => "Bag",
+
+            "image" => "https://m.media-amazon.com/images/I/61Ons69gBWL._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "ESTARER"
+        ]);
+        Product::create([
+            "name" => "THE NORTH FACE Borealis Sling Bag",
+            "price" => 7.8,
+            "description" => "Bag",
+
+            "image" => "https://m.media-amazon.com/images/I/61Khc+P9oLL._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "ESTARER"
+        ]);
+        Product::create([
+            "name" => "Lacoste Unisex Neocroc Shoulder Bag",
+            "price" => 7.8,
+            "description" => "Bag",
+
+            "image" => "https://m.media-amazon.com/images/I/81y9dOYN4IL._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "ESTARER"
+        ]);
+        Product::create([
+            "name" => "KROSER Laptop Bag Premium Laptop Briefcase",
+            "price" => 7.8,
+            "description" => "Bag",
+
+            "image" => "https://m.media-amazon.com/images/I/81ikgqLxSbL._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "ESTARER"
+        ]);
+        Product::create([
+            "name" => "FashionPuzzle Small Crescent Shoulder Bag Underarm Purse",
+            "price" => 7.8,
+            "description" => "Bag",
+
+            "image" => "https://m.media-amazon.com/images/I/912zP+qy8IL._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "ESTARER"
+        ]);
+        Product::create([
+            "name" => "Beatfull Designer Bee Crossbody Purse",
+            "price" => 7.8,
+            "description" => "Bag",
+
+            "image" => "https://m.media-amazon.com/images/I/81VtnTwMIML._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "ESTARER"
+        ]);
+        Product::create([
+            "name" => "BAGSMART Tote Bag for Women",
+            "price" => 7.8,
+            "description" => "Bag",
+
+            "image" => "https://m.media-amazon.com/images/I/81IC4ifUr0L._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "ESTARER"
+        ]);
+        Product::create([
+            "name" => "Travelon Anti-Theft Heritage Crossbody Bag",
+            "price" => 7.8,
+            "description" => "Bag",
+
+            "image" => "https://m.media-amazon.com/images/I/81QgQd4-9jL._AC_UL480_FMwebp_QL65_.jpg",
+            "brand" => "ESTARER"
+        ]);
+
+
+
     }
 }

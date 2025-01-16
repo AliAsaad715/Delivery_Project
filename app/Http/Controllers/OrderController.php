@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\OrderStatusUpdated;
 use App\Http\Resources\OrderProductStoreResource;
 use App\Http\Resources\OrderResource;
 use App\Models\Order;
@@ -125,5 +126,23 @@ class OrderController extends Controller
         Order::destroy($id);
 
         return $this->apiResponse(null, 'Success', 201);
+    }
+
+    public function updateStatus(Request $request)
+    {
+        $order = Order::find($request['order_id']);
+        $request->validate([
+            'status' => 'required|string',
+        ]);
+
+        $order->update([
+            'status' => $request->status,
+        ]);
+        event(new OrderStatusUpdated($order));
+
+        return response()->json([
+            'message' => 'Order status updated successfully!',
+            'order' => $order,
+        ]);
     }
 }

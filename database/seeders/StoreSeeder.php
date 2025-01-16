@@ -24,23 +24,23 @@ class StoreSeeder extends Seeder
         ]);
         Store::create([
             'name' => 'Tech World',
-                'image' => 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+            'image' => 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
         ]);
         Store::create([
             'name' => 'Fashion Hub',
-                'image' => 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+            'image' => 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
         ]);
         Store::create([
             'name' => 'Book Haven',
-                'image' => 'https://images.unsplash.com/photo-1512820790803-83ca734da794?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+            'image' => 'https://images.unsplash.com/photo-1512820790803-83ca734da794?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
         ]);
         Store::create([
             'name' => 'Gadget Zone',
-                'image' => 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+            'image' => 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
         ]);
         Store::create([
             'name' => 'Art Studio',
-                'image' => 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+            'image' => 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
         ]);
         Store::create([
             'name' => 'Home Essentials',
@@ -51,19 +51,13 @@ class StoreSeeder extends Seeder
             'image' => 'https://images.unsplash.com/photo-1517649763962-0c623066013b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
         ]);
         Store::create([
-           'name' => 'Pet Store',
-                'image' => 'https://images.unsplash.com/photo-1592194996303-c87000b576cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+            'name' => 'Pet Store',
+            'image' => 'https://images.unsplash.com/photo-1592194996303-c87000b576cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
         ]);
         Store::create([
             'name' => 'Music World',
-                'image' => 'https://images.unsplash.com/photo-1511376777868-611b54f68947?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
+            'image' => 'https://images.unsplash.com/photo-1511376777868-611b54f68947?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
         ]);
-        Store::create([
-            'name' => 'Grocery Mart',
-                'image' => 'https://images.unsplash.com/photo-1537041373298-55dbb337e651?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=400',
-        ]);
-
-
     }
 }
 /*

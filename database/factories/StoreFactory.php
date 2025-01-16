@@ -16,10 +16,9 @@ class StoreFactory extends Factory
         $image = $unsplashService->getRandomImage();
 
         return [
-            'name' => $this->faker->company,
-            'image' => $image, 
-            'created_at' => now(),
-            'updated_at' => now(),
-        ];
+        'name' => $this->faker->company,
+        //'address' => $this->faker->address,
+        //'phone' => $this->faker->phoneNumber,
+        'image' => $this->faker->imageUrl(640, 480, 'business', true, 'Store'),];
     }
 }

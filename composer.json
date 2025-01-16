@@ -7,9 +7,13 @@
     "require": {
         "php": "^8.1",
         "guzzlehttp/guzzle": "^7.9",
+        "kreait/laravel-firebase": "^5.10",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.3",
-        "laravel/tinker": "^2.8"
+        "laravel/tinker": "^2.8",
+        "mckenziearts/laravel-notify": "*",
+        "propaganistas/laravel-phone": "^5.3",
+        "stichoza/google-translate-php": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

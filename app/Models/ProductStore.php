@@ -25,4 +25,10 @@ class ProductStore extends Model
     {
         return $this->hasMany(OrderProductStore::class);
     }
+
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class);
+    }
+
 }
