@@ -16,4 +16,4 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
-/.C:\xampp\htdocs\Laravel_Projects\delivery_app2\storage\firebase\serviceAccountKey.json
+/.storage\firebase\serviceAccountKey.json
