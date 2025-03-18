@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace app\Http\Controllers\User;
 
 use App\Http\Resources\AuthResource;
 use App\Models\User;
@@ -15,7 +15,7 @@ class AuthController extends Controller
 {
     use ApiResponseTrait;
 
-    public function register(Request $request)
+    public function register(Request $request): \Illuminate\Foundation\Application|\Illuminate\Http\Response|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory
     {
         $translator = new GoogleTranslate(app()->getLocale());
         $validator = Validator::make($request->all(), [
@@ -41,7 +41,7 @@ class AuthController extends Controller
     }
 
 
-    public function login(Request $request)
+    public function login(Request $request): \Illuminate\Foundation\Application|\Illuminate\Http\Response|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory
     {
         $validator = Validator::make($request->all(), [
             'phone_number' => ['required'],
@@ -57,34 +57,21 @@ class AuthController extends Controller
         if (!$user || !Hash::check($request['password'], $user->password))
             return $this->apiResponse(null, 'Wrong phone number or password', 404);
 
+        $user->generateCode();
         $token = $user->createToken('myappToken')->plainTextToken;
         $response = [
             'user' => new AuthResource($user),
-            'token' => $token
+            'token' => $token,
+            'verification_code' => $user->code
         ];
         return $this->apiResponse($response, 'Logged in', 200);
     }
 
 
-    public function logout()
+    public function logout(): \Illuminate\Foundation\Application|\Illuminate\Http\Response|\Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\Routing\ResponseFactory
     {
         Auth::user()->currentAccessToken()->delete();
         return $this->apiResponse(null, 'Logged out', 200);
-    }
-
-    public function verification(Request $request)
-    {
-        // $validator = Validator::make($request->all(), [
-        //     'v_code' => ['required', 'numeric', 'digits:4']
-        // ]);
-
-        // if ($validator->fails()) {
-        //     return $this->apiResponse(null, $validator->errors()->toJson(), 400);
-        // }
-        if ($request['v_code'] == 1234)
-            return $this->apiResponse(null, 'Verified successfully', 200);
-
-        return $this->apiResponse(null, 'The code is wrong.', 404);
     }
 
 }

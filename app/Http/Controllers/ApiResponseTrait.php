@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace app\Http\Controllers\User;
 use Stichoza\GoogleTranslate\GoogleTranslate;
+
 trait ApiResponseTrait
 {
 

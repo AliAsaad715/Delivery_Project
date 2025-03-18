@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace app\Http\Controllers\User;
 
 use App\Http\Resources\ProductDetailsResource;
 use App\Http\Resources\ProductResource;
-use App\Models\ProductStore;
 use App\Models\Product;
+use App\Models\ProductStore;
 
 class ProductController extends Controller
 {

@@ -1,18 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace app\Http\Controllers\User;
 
 use App\Events\OrderStatusUpdated;
 use App\Http\Resources\OrderProductStoreResource;
 use App\Http\Resources\OrderResource;
 use App\Models\Order;
 use App\Models\OrderProductStore;
-use App\Models\Product;
 use App\Models\ProductStore;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Log;
 
 class OrderController extends Controller
 {
